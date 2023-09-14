@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<title>Play-only video player</title>
+<meta name="viewport" content="initial-scale=1, viewport-fit=cover">
+<style>
+  div.play_only
+  {
+    position: relative;
+  }
+  div.play_only video
+  {
+    width: 100%;
+    display: block;
+    pointer-events: none;
+  }
+  div.play_only button
+  {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    border: none;
+    background: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+  }
+  div.play_only button > svg
+  {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -2.5rem;
+    width: 5rem;
+    height: 5rem;
+    padding: 1rem;
+    border-radius: 5rem;
+    background: white;
+  }
+  div.play_only button:active
+  {
+    opacity: 0.8;
+  }
+</style>
+</head>
+<body>
+
+<div class="play_only">
+  <video src="https://tube.switch.ch/external/c9e8c62f" playsinline></video>
+  <button onclick="this.parentElement.querySelector('video').play(); this.remove()">
+    <svg viewBox="0 0 24 24" fill="currentColor" class="play"><path d="M8 5v14l11-7z"></path></svg>
+  </button>
+</div>
+
+</body>
+</html>
